@@ -8,15 +8,12 @@ author_profile: true
 permalink: "/about/"
 ---
 
-Hello world! I'm Kevin Chuang. I'm a software engineer and also a data engineer (I should just pick one and stick with it).
+Hello world! I'm Kevin Chuang. I'm a software engineer with a background in electrical engineering and a master's in software engineering with a focus on data science. I transitioned into software after discovering a passion for programming, starting with small automation scripts in Python and evolving into building full-scale systems across data, backend, and infrastructure.
 
-I have a BS in electrical engineering from University of California, San Diego and a MS in software engineering with a specialization in data science at San Jose State University.
+I enjoy solving complex problems, designing scalable systems, and continuously learning new technologies. My experience spans data, backend development, and machine learning, and I'm excited about roles that allow me to work across the stack.
 
-I decided to switch from EE to software engineering, because I realized I really enjoyed programming. I am mostly self-taught in Python and started learning by writing little Python scripts to automate things like moving files around or downloading lots of audio files online. To further my knowledge and passion, I decided to pursue a Master's in software engineering. That's where I realized the power of software & data, and how much I enjoyed working with both. This led me to engage in a career as a Data Engineer, where I can happily work with both.
+I spend my free time building personal software projects, many of which live on GitHub. Beyond code, I’m passionate about gaming, skateboarding, and travel and I capture these moments through photography and video. I enjoy editing with Final Cut Pro and sharing visual stories on VSCO. Recently, I’ve been exploring film photography and finding new ways to blend creativity with technology.
 
-Rather then list out all of my hobbies, I want to show what I do on my free time. Whenever I have time, I enjoy spending time on personal software projects & showcasing them on Github. In addition, I really enjoy gaming, skateboarding, and traveling, and I also enjoy creating & editing Youtube videos around these 3 hobbies using Final Cut Pro. I love photography, and always try to take pictures especially when I travel (usually with just my iPhone, but thinking about getting a film camera). You can check these photos out on my VSCO profile (link below). More recently, I started playing a lot of online chess on Chess.com, slowly trying to reach 1200 rating in Rapid games (and trying not to get tilted when I lose 5 games in a row or blunder the queen).
-
-Below are my social links that showcase some of my hobbies. Feel free to follow me on any of the platforms!
 
 <div class="page__footer-follow">
 <ul class="social-icons">
