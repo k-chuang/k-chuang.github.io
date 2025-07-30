@@ -64,7 +64,7 @@ plugins:
 author:
   name: "Kevin Chuang"
   avatar: "/assets/images/bio.jpg"
-  bio: "Data Engineer"
+  bio: "Software Engineer"
   location: "San Jose, California"
   links:
     - label: "Email"
