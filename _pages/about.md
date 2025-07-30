@@ -12,7 +12,7 @@ Hello world! I'm Kevin Chuang. I'm a software engineer with a background in elec
 
 I enjoy solving complex problems, designing scalable systems, and continuously learning new technologies. My experience spans data, backend development, and machine learning, and I'm excited about roles that allow me to work across the stack.
 
-I spend my free time building personal software projects, many of which live on GitHub. Beyond code, I’m passionate about gaming, skateboarding, and travel and I capture these moments through photography and video. I enjoy editing with Final Cut Pro and sharing visual stories on VSCO. Recently, I’ve been exploring film photography and finding new ways to blend creativity with technology.
+I spend my free time building personal software projects, many of which live on GitHub. Beyond code, I’m passionate about gaming, skateboarding, and travel and I capture these moments through photography and video. Recently, I’ve been exploring film photography and finding new ways to blend creativity with technology.
 
 
 <div class="page__footer-follow">
