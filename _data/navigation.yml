@@ -4,7 +4,7 @@ main:
   - title: "Projects"
     url: /projects/
   - title: "Resume / CV"
-    url: https://k-chuang.github.io/KevinChuangResume/
+    url: /resume/cv.pdf
   - title: "Blog"
     url: /posts/
   # - title: "Categories"
