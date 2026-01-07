@@ -20,8 +20,8 @@ I spend my free time building personal software projects, many of which live on 
 {% if site.data.ui-text[site.locale].follow_label %}
       <strong>Subscribe or follow me: </strong>
 {% endif %}
+<a href="https://www.instagram.com/bykevinchuang/" target="_blank" rel="nofollow noopener noreferrer"><i class="{{ 'fas fa-fw fa-camera' | default: 'fas fa-link' }}" aria-hidden="true"></i>Instagram</a>
 <a href="https://www.github.com/k-chuang" target="_blank" rel="nofollow noopener noreferrer"><i class="{{ 'fab fa-fw fa-github' | default: 'fas fa-link' }}" aria-hidden="true"></i>Github</a>
 <a href="https://www.youtube.com/channel/UCumYWKxbe3sUZ6VkMNWcEuA" target="_blank" rel="nofollow noopener noreferrer"><i class="{{ 'fab fa-fw fa-youtube' | default: 'fas fa-link' }}" aria-hidden="true"></i>Youtube</a>
-<a href="https://www.instagram.com/bykevinchuang/" target="_blank" rel="nofollow noopener noreferrer"><i class="{{ 'fas fa-fw fa-camera' | default: 'fas fa-link' }}" aria-hidden="true"></i>Instagram</a>
 </ul>
 </div>
