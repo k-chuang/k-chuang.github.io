@@ -3,7 +3,8 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 
 gem "tzinfo-data"
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# Use Jekyll's built-in polling watcher on Windows. The legacy wdm 0.1.x
+# extension does not compile against current supported Ruby versions.
 gem "activesupport", ">= 6.0.3.1"
 gem "nokogiri", ">= 1.10.8"
 

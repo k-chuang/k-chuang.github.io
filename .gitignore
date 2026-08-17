@@ -1,2 +1,15 @@
 .DS_Store
 _site/*
+
+# Legacy local résumé tooling. The site publishes only resume/cv.pdf.
+cv.log
+resume/.github/
+resume/Makefile
+resume/*.aux
+resume/*.cls
+resume/*.log
+resume/*.out
+resume/*.synctex.gz
+resume/*.tex
+resume/fonts/
+resume/resume/

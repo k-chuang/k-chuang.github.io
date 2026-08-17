@@ -1,75 +1,109 @@
 ---
 layout: splash
 permalink: /
-excerpt: >
-  <header>
-    <p id="page-title" class="page__title" itemprop="headline" style="text-align:center">
-      <br>
-      <br>
-      <br>
-      <br>
-      Hi, I'm Kevin Chuang.
-      <p class="page__lead" style="text-align:center">
-      A Software Engineer and AI Enthusiast
-      </p>
-      <br>
-      <br>
-      <br>
-      <br>
-    </p>
-  </header>
-header:
-  overlay_color: "#E7E7E7"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/mountains_blue_ocean.jpg
-intro:
-  - excerpt: ''
-feature_row:
-  - image_path: assets/images/sean_stratton.jpg
-    alt: "placeholder image 1"
-    title: "About Me"
-    excerpt: "Read more about me and my hobbies."
-    url: "/about"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/scott-graham.jpg
-    alt: "placeholder image 2"
-    title: "Projects"
-    excerpt: "My personal, school, and work projects."
-    url: "/projects"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/aaron-burden_cropped.jpg
-    alt: "placeholder image 3"
-    title: "Blog"
-    excerpt: "General & technical blog"
-    url: "/posts"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-feature_row2:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Left Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-feature_row3:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Right Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-feature_row4:
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder Image Center Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Centered with `type="center"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+description: "Senior Software Engineer building backend, data, distributed, and AI/ML systems in production."
+author_profile: false
+classes: portfolio-background
 ---
-{% include feature_row id="intro" type="center" %}
-{% include feature_row %}
+<div class="portfolio-home portfolio-home--split">
+  <aside class="portfolio-sidebar" aria-label="Profile and portfolio navigation">
+    <div class="portfolio-sidebar__inner">
+      <img class="portfolio-sidebar__photo" src="{{ '/assets/images/bio.jpg' | relative_url }}" alt="Kevin Chuang sitting beside a waterfall" decoding="async">
+      <p class="portfolio-eyebrow">Hello, I&rsquo;m</p>
+      <h1 id="portfolio-title">Kevin Chuang</h1>
+      <p class="portfolio-sidebar__role">Senior Software Engineer</p>
+      <p class="portfolio-sidebar__tagline">I build resilient, production-ready systems across backend, data, and AI.</p>
+
+      <nav class="portfolio-sidebar__nav" aria-label="Homepage sections">
+        <a href="#about"><span aria-hidden="true"></span>About</a>
+        <a href="#experience"><span aria-hidden="true"></span>Experience</a>
+        <a href="{{ '/projects/' | relative_url }}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"></span>Projects</a>
+        <a href="{{ '/resume/cv.pdf' | relative_url }}"><span aria-hidden="true"></span>Résumé</a>
+      </nav>
+
+      <ul class="portfolio-sidebar__links" aria-label="Professional links">
+        <li>
+          <a href="mailto:kevinchuang7@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/k-chuang" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.3c0 .32.22.69.83.57A12 12 0 0 0 12 .7Z"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/kevin-chuang/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13Zm1.78 13.04H3.54V8.98H7.1v11.47Z"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/bykevinchuang/" target="_blank" rel="noopener noreferrer" aria-label="Photography on Instagram" title="Photography on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.012 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.264-.07-1.644-.07-4.849s.013-3.583.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838A6.162 6.162 0 1 0 12 18.162 6.162 6.162 0 0 0 12 5.838ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z"></path></svg>
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/resume/cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Résumé" title="Résumé">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 2.75h8l4 4V21.25H6z"></path><path d="M14 2.75v4h4M9 11h6M9 14.5h6M9 18h4"></path></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="portfolio-home__content">
+    <section class="portfolio-home__section portfolio-home__about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About me</h2>
+      <p>Hi there! I’m Kevin, and I enjoy building things. I’m a software engineer focused on resilient production systems across backend, data, and machine learning.</p>
+      <p>Currently, I’m a Senior Software Engineer at <strong>Adobe</strong>, where I build and own data platforms supporting procurement, financial reporting, and marketing measurement. My work spans ingestion pipelines, data models, and internal products that turn complex operational data into reliable insights.</p>
+      <p>Previously, I worked at <strong>Turo</strong>, <strong>HomeLight</strong>, and <strong>ViacomCBS</strong>, where I built and shipped <strong>production backend and machine-learning systems</strong> powering marketing attribution, competitive pricing, marketplace matching, personalized recommendations, and video experiences.</p>
+      <p>In my spare time, you can usually find me running, gaming, skateboarding, hiking, spending time in nature, traveling, or taking photos and video.</p>
+    </section>
+
+    <section class="portfolio-home__section portfolio-experience" id="experience" aria-labelledby="experience-title">
+      <div class="portfolio-home__section-heading">
+        <h2 id="experience-title">Experience</h2>
+        <p>9+ years building production systems across enterprise and consumer products.</p>
+      </div>
+      {% include home-experience.html %}
+    </section>
+
+    <section class="portfolio-home__section portfolio-home__projects" id="projects" aria-labelledby="projects-title">
+      <div class="portfolio-home__section-heading">
+        <h2 id="projects-title">Projects</h2>
+        <p>A few systems and products I&rsquo;ve enjoyed building.</p>
+      </div>
+
+      <div class="featured-projects">
+        <article class="featured-project">
+          <a href="{{ '/projects/#url-shortener-title' | relative_url }}">
+            <p class="featured-project__type">Distributed systems</p>
+            <h3>Yet Another URL Shortener <span aria-hidden="true">↗</span></h3>
+            <p class="featured-project__summary">A horizontally scalable URL platform built with Go microservices, sharded MongoDB, Kong, and AWS.</p>
+            <ul class="featured-project__skills" aria-label="URL Shortener technologies"><li>Go</li><li>AWS</li><li>MongoDB</li><li>Kong</li></ul>
+          </a>
+        </article>
+
+        <article class="featured-project">
+          <a href="{{ '/projects/#summarizer-title' | relative_url }}">
+            <p class="featured-project__type">Backend systems and NLP</p>
+            <h3>Text Summarizer Chrome Extension <span aria-hidden="true">↗</span></h3>
+            <p class="featured-project__summary">A browser extension paired with a cloud-hosted service for condensing long-form content without leaving the page.</p>
+            <ul class="featured-project__skills" aria-label="Text Summarizer technologies"><li>Go</li><li>Python</li><li>JavaScript</li><li>GCP</li></ul>
+          </a>
+        </article>
+
+        <article class="featured-project">
+          <a href="{{ '/projects/#emotion-title' | relative_url }}">
+            <p class="featured-project__type">Applied machine learning</p>
+            <h3>Emotional State Recognition <span aria-hidden="true">↗</span></h3>
+            <p class="featured-project__summary">A containerized deep-learning system that recognizes emotional states from facial expressions and body gestures.</p>
+            <ul class="featured-project__skills" aria-label="Emotional State Recognition technologies"><li>Python</li><li>TensorFlow</li><li>Flask</li><li>Docker</li></ul>
+          </a>
+        </article>
+      </div>
+
+      <a class="portfolio-button portfolio-button--primary featured-projects__all" href="{{ '/projects/' | relative_url }}">View all projects</a>
+    </section>
+  </main>
+</div>

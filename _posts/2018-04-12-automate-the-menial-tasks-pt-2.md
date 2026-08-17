@@ -30,9 +30,9 @@ Both **travis-ci** and **coveralls.io** sync with GitHub, so every commit to a G
 
 The two dynamic and clickable icons that are on my GitHub are located here. Click them if you are interested in seeing the up-to-date details and status of my build on travis-ci and the code coverage stats on coverage.io:
 
-[![Build Status]({{ site.baseurl }}/assets/automate-download-freesound.svg?branch=master)](https://travis-ci.org/k-chuang/automate-download-freesound)
+[![Build Status](https://travis-ci.org/k-chuang/automate-download-freesound.svg?branch=master)](https://travis-ci.org/k-chuang/automate-download-freesound)
 
-[![Coverage Status]({{ site.baseurl }}/assets/badge.svg?branch=master)](https://coveralls.io/github/k-chuang/automate-download-freesound?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/k-chuang/automate-download-freesound/badge.svg?branch=master)](https://coveralls.io/github/k-chuang/automate-download-freesound?branch=master)
 
 The Python code for this project can be found on my GitHub along with the cool badge icons shown above, courtesy of **travis-ci** and **coveralls.io** :
 

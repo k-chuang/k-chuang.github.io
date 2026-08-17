@@ -48,7 +48,7 @@ This skill is meant to help people who are going through depression. The main fe
 
 ## Architecture
 
-![Utopia-alexa-skill-architecture.png]({{ site.baseurl }}/assets/utopia-alexa-skill-architecture1.png)
+[View the Utopia source and architecture on GitHub.](https://github.com/k-chuang/utopia-alexa-skill)
 
 ## Features
 
@@ -96,7 +96,7 @@ $ pytest tests/test\_utopia\_unit.py -v —cov utopia —cov-report term-missing
 
 This command will execute the tests and check for test code coverage of the main program ([utopia.py](https://github.com/k-chuang/utopia-alexa-skill/blob/master/utopia.py)), and report which lines were not covered by the test suite ([test\_utopia\_unit.py](https://github.com/k-chuang/utopia-alexa-skill/blob/master/tests/test_utopia_unit.py)).
 
-### Travis CI&nbsp; [![Build Status]({{ site.baseurl }}/assets/utopia-alexa-skill.svg?branch=master)](https://travis-ci.org/k-chuang/utopia-alexa-skill)
+### Travis CI&nbsp; [![Build Status](https://travis-ci.org/k-chuang/utopia-alexa-skill.svg?branch=master)](https://travis-ci.org/k-chuang/utopia-alexa-skill)
 
 This project uses&nbsp;[Travis-CI](https://travis-ci.org/), a hosted, distributed continuous integration service that builds and tests software hosted on GitHub. Every commit that is pushed to a GitHub repo automatically triggers&nbsp;[Travis CI](https://travis-ci.org/)&nbsp;to run, build and test your software.
 
@@ -104,7 +104,7 @@ The continuous integration configuration is specified in&nbsp;[.travis.yml](http
 
 [Travis CI](https://travis-ci.org/)&nbsp;generates a badge with the current build status (displayed above). Click on the badge for more information.
 
-### Codecov&nbsp; [![codecov]({{ site.baseurl }}/assets/badge.svg)](https://codecov.io/gh/k-chuang/utopia-alexa-skill)
+### Codecov&nbsp; [![codecov](https://codecov.io/gh/k-chuang/utopia-alexa-skill/branch/master/graph/badge.svg)](https://codecov.io/gh/k-chuang/utopia-alexa-skill)
 
 This project uses&nbsp;[Codecov](https://codecov.io/)&nbsp;to generate code coverage reports.&nbsp;[Codecov](https://codecov.io/)&nbsp;is a free, open source code coverage reporting tool that integrates seamlessly with GitHub. It calculates and measures code coverage and delivers the coverage metrics in a clear, understandable way. Similar to Travis CI,&nbsp;[Codecov](https://codecov.io/)&nbsp;also generates a clickable badge (displayed above) with the current code coverage metrics.
 
