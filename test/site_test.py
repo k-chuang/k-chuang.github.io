@@ -158,6 +158,10 @@ class PortfolioSiteTests(unittest.TestCase):
         with resume.open("rb") as stream:
             resume_bytes = stream.read()
         self.assertEqual(b"%PDF", resume_bytes[:4])
+        self.assertFalse(
+            b"tel:" in resume_bytes.lower(),
+            "The published résumé must not contain an embedded telephone link",
+        )
 
     def test_02_primary_navigation_is_exact_and_consistent(self):
         expected = [
@@ -395,6 +399,8 @@ class PortfolioSiteTests(unittest.TestCase):
         self.assertIn(".portfolio-hero", css)
         self.assertIn("mountains_blue_ocean.jpg", css)
         self.assertIn("body.portfolio-background::before", css)
+        self.assertIn("body.portfolio-background .header-link", css)
+        self.assertIn("body.portfolio-projects-page .header-link", css)
         self.assertNotIn(".career-timeline", css)
         self.assertIn(".experience-role--current", css)
         self.assertIn("@media", css)

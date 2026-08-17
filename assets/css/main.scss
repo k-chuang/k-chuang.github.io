@@ -825,6 +825,12 @@ body.portfolio-background > .masthead { display: none; }
 
 body.portfolio-projects-page > .masthead { display: none; }
 
+/* Keep heading IDs available for deep links without showing theme permalink icons. */
+body.portfolio-background .header-link,
+body.portfolio-projects-page .header-link {
+  display: none;
+}
+
 body.portfolio-projects-page .page {
   float: none;
   width: 100%;
