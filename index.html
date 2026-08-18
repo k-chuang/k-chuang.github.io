@@ -8,7 +8,27 @@ classes: portfolio-background
 <div class="portfolio-home portfolio-home--split">
   <aside class="portfolio-sidebar" aria-label="Profile and portfolio navigation">
     <div class="portfolio-sidebar__inner">
-      <img class="portfolio-sidebar__photo" src="{{ '/assets/images/bio.jpg' | relative_url }}" alt="Kevin Chuang sitting beside a waterfall" decoding="async">
+      <picture>
+        <source
+          type="image/avif"
+          srcset="{{ '/assets/images/bio-320.avif' | relative_url }} 320w, {{ '/assets/images/bio-640.avif' | relative_url }} 640w"
+          sizes="(max-width: 1023px) 136px, 152px">
+        <source
+          type="image/webp"
+          srcset="{{ '/assets/images/bio-320.webp' | relative_url }} 320w, {{ '/assets/images/bio-640.webp' | relative_url }} 640w"
+          sizes="(max-width: 1023px) 136px, 152px">
+        <img
+          class="portfolio-sidebar__photo"
+          src="{{ '/assets/images/bio-640.jpg' | relative_url }}"
+          srcset="{{ '/assets/images/bio-320.jpg' | relative_url }} 320w, {{ '/assets/images/bio-640.jpg' | relative_url }} 640w"
+          sizes="(max-width: 1023px) 136px, 152px"
+          width="640"
+          height="800"
+          alt="Kevin Chuang sitting beside a waterfall"
+          decoding="async"
+          fetchpriority="high"
+          loading="eager">
+      </picture>
       <p class="portfolio-eyebrow">Hello, I&rsquo;m</p>
       <h1 id="portfolio-title">Kevin Chuang</h1>
       <p class="portfolio-sidebar__role">Senior Software Engineer</p>

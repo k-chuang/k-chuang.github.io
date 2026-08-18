@@ -36,8 +36,10 @@ class ParsedHtml(HTMLParser):
         self.resources = []
         self.ids = []
         self.images = []
+        self.videos = []
         self.primary_navigation = []
         self.meta = {}
+        self.meta_property = {}
         self.html_lang = None
         self.title = ""
         self.h1 = []
@@ -64,8 +66,11 @@ class ParsedHtml(HTMLParser):
 
         if tag == "html":
             self.html_lang = attributes.get("lang")
-        elif tag == "meta" and attributes.get("name"):
-            self.meta[attributes["name"].lower()] = attributes.get("content", "")
+        elif tag == "meta":
+            if attributes.get("name"):
+                self.meta[attributes["name"].lower()] = attributes.get("content", "")
+            if attributes.get("property"):
+                self.meta_property[attributes["property"].lower()] = attributes.get("content", "")
         elif tag == "title":
             self._active_title = []
         elif tag == "h1":
@@ -79,8 +84,10 @@ class ParsedHtml(HTMLParser):
             }
         elif tag == "img":
             self.images.append(attributes)
+        elif tag == "video":
+            self.videos.append(attributes)
 
-        for attribute in ("href", "src"):
+        for attribute in ("href", "src", "data-src", "poster"):
             if attributes.get(attribute):
                 self.resources.append((tag, attribute, attributes[attribute]))
 
@@ -145,13 +152,48 @@ class PortfolioSiteTests(unittest.TestCase):
             EXPERIENCE_REDIRECT,
             SITE / "assets" / "css" / "main.css",
             SITE / "assets" / "js" / "main.min.js",
+            SITE / "assets" / "js" / "lazy-video.js",
             SITE / "assets" / "images" / "mountains_blue_ocean.jpg",
+            SITE / "assets" / "images" / "bio-320.avif",
+            SITE / "assets" / "images" / "bio-640.avif",
+            SITE / "assets" / "images" / "bio-320.webp",
+            SITE / "assets" / "images" / "bio-640.webp",
+            SITE / "assets" / "images" / "bio-320.jpg",
+            SITE / "assets" / "images" / "bio-640.jpg",
+            SITE / "assets" / "images" / "bio-avatar-400.webp",
+            SITE / "assets" / "images" / "tldr-extension-go-demo-poster.webp",
+            SITE / "assets" / "images" / "tldr-extension-go-demo.webm",
+            SITE / "assets" / "images" / "tldr-extension-go-demo.mp4",
             SITE / "feed.xml",
             SITE / "sitemap.xml",
             SITE / "resume" / "cv.pdf",
         ]
         missing = [str(path.relative_to(SITE)) for path in required if not path.is_file()]
         self.assertEqual([], missing, "Missing required generated files")
+
+        obsolete_media = [
+            SITE / "assets" / "images" / "bio.jpg",
+            SITE / "assets" / "images" / "tldr-extension-go-demo.gif",
+        ]
+        self.assertEqual(
+            [],
+            [str(path.relative_to(SITE)) for path in obsolete_media if path.exists()],
+            "Large superseded media must not be published",
+        )
+
+        size_limits = {
+            "bio-640.avif": 300_000,
+            "bio-640.webp": 300_000,
+            "bio-640.jpg": 300_000,
+            "bio-avatar-400.webp": 100_000,
+            "tldr-extension-go-demo-poster.webp": 100_000,
+            "tldr-extension-go-demo.webm": 2_000_000,
+            "tldr-extension-go-demo.mp4": 3_000_000,
+        }
+        for filename, byte_limit in size_limits.items():
+            asset = SITE / "assets" / "images" / filename
+            with self.subTest(asset=filename):
+                self.assertLess(asset.stat().st_size, byte_limit)
 
         resume = SITE / "resume" / "cv.pdf"
         self.assertGreater(resume.stat().st_size, 10_000)
@@ -190,11 +232,22 @@ class PortfolioSiteTests(unittest.TestCase):
         self.assertIn("find me running, gaming, skateboarding", source)
         self.assertIn("hiking, spending time in nature", source)
         self.assertNotIn("film photography and its slower, more intentional process", source)
-        self.assertTrue(any(
-            image.get("src") == "/assets/images/bio.jpg"
-            and image.get("alt") == "Kevin Chuang sitting beside a waterfall"
-            for image in document.images
-        ))
+        portrait = next(
+            image for image in document.images
+            if image.get("src") == "/assets/images/bio-640.jpg"
+        )
+        self.assertEqual("Kevin Chuang sitting beside a waterfall", portrait.get("alt"))
+        self.assertEqual("640", portrait.get("width"))
+        self.assertEqual("800", portrait.get("height"))
+        self.assertEqual("eager", portrait.get("loading"))
+        self.assertEqual("high", portrait.get("fetchpriority"))
+        self.assertIn("bio-320.jpg 320w", portrait.get("srcset", ""))
+        self.assertIn("bio-640.jpg 640w", portrait.get("srcset", ""))
+        for optimized_portrait in (
+            "bio-320.avif", "bio-640.avif", "bio-320.webp", "bio-640.webp"
+        ):
+            self.assertIn(optimized_portrait, source)
+        self.assertNotIn("/assets/images/bio.jpg", source)
         self.assertIn('id="experience"', source)
         self.assertIn('id="experience-title"', source)
         self.assertIn("9+ years building production systems", source)
@@ -254,6 +307,25 @@ class PortfolioSiteTests(unittest.TestCase):
             for phrase in phrases:
                 with self.subTest(page=public_path, phrase=phrase):
                     self.assertIn(phrase, source)
+
+    def test_04a_project_demo_is_optimized_and_lazy_loaded(self):
+        document = self.parse_html(PRIMARY_PAGES["/projects/"])
+        source = PRIMARY_PAGES["/projects/"].read_text(encoding="utf-8")
+        self.assertEqual(1, len(document.videos))
+        demo = document.videos[0]
+        self.assertIn("data-lazy-video", demo)
+        self.assertEqual("960", demo.get("width"))
+        self.assertEqual("554", demo.get("height"))
+        self.assertEqual("none", demo.get("preload"))
+        self.assertEqual(
+            "/assets/images/tldr-extension-go-demo-poster.webp",
+            demo.get("poster"),
+        )
+        self.assertIn("/assets/images/tldr-extension-go-demo.webm", source)
+        self.assertIn("/assets/images/tldr-extension-go-demo.mp4", source)
+        self.assertIn("/assets/js/lazy-video.js", source)
+        self.assertIn('loading="lazy"', source)
+        self.assertNotIn("tldr-extension-go-demo.gif", source)
 
     def test_04b_experience_entries_are_compact_and_complete(self):
         file_path = PRIMARY_PAGES["/"]
@@ -362,6 +434,10 @@ class PortfolioSiteTests(unittest.TestCase):
                 self.assertTrue(document.title)
                 self.assertIn("Kevin Chuang", document.title)
                 self.assertGreaterEqual(len(document.meta.get("description", "").strip()), 40)
+                self.assertEqual(
+                    "https://k-chuang.github.io/assets/images/mountains_blue_ocean.jpg",
+                    document.meta_property.get("og:image"),
+                )
                 self.assertEqual(1, len(document.h1))
                 self.assertEqual(len(document.ids), len(set(document.ids)), "Duplicate HTML ids")
                 for image in document.images:

@@ -38,7 +38,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
 
-og_image: "/assets/images/bio.jpg"
+og_image: "/assets/images/mountains_blue_ocean.jpg"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -74,7 +74,7 @@ plugins:
 
 author:
   name: "Kevin Chuang"
-  avatar: "/assets/images/bio.jpg"
+  avatar: "/assets/images/bio-avatar-400.webp"
   bio: "Senior Software Engineer · Backend, Data & AI Systems"
   location: "San Jose, California"
   links:

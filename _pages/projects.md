@@ -36,7 +36,26 @@ description: "Selected backend, distributed systems, data, and machine learning 
       </div>
       <ul class="portfolio-tags"><li>Go</li><li>Python</li><li>JavaScript</li><li>GCP</li><li>Docker</li><li>TextRank</li></ul>
       <a class="portfolio-text-link" href="https://github.com/k-chuang/tldr-extension-go">View source on GitHub <span aria-hidden="true">↗</span></a>
-      <figure class="project-showcase__media"><img src="{{ '/assets/images/tldr-extension-go-demo.gif' | relative_url }}" alt="Text Summarizer Chrome extension demo"><figcaption>The extension summarizing content directly in the browser.</figcaption></figure>
+      <figure class="project-showcase__media">
+        <video
+          class="project-showcase__demo"
+          data-lazy-video
+          width="960"
+          height="554"
+          controls
+          loop
+          muted
+          playsinline
+          preload="none"
+          poster="{{ '/assets/images/tldr-extension-go-demo-poster.webp' | relative_url }}"
+          aria-label="Text Summarizer Chrome extension demo">
+          <source data-src="{{ '/assets/images/tldr-extension-go-demo.webm' | relative_url }}" type="video/webm">
+          <source data-src="{{ '/assets/images/tldr-extension-go-demo.mp4' | relative_url }}" type="video/mp4">
+          <p>Your browser does not support embedded video. <a href="{{ '/assets/images/tldr-extension-go-demo.mp4' | relative_url }}">Download the demo</a>.</p>
+        </video>
+        <noscript><a href="{{ '/assets/images/tldr-extension-go-demo.mp4' | relative_url }}"><img src="{{ '/assets/images/tldr-extension-go-demo-poster.webp' | relative_url }}" width="960" height="554" loading="lazy" alt="Text Summarizer Chrome extension demo"></a></noscript>
+        <figcaption>The extension summarizing content directly in the browser.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -80,3 +99,5 @@ description: "Selected backend, distributed systems, data, and machine learning 
     </div>
   </section>
 </div>
+
+<script src="{{ '/assets/js/lazy-video.js' | relative_url }}" defer></script>

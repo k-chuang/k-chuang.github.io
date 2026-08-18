@@ -726,7 +726,14 @@ body.portfolio-background .page__footer {
   border: 1px solid var(--portfolio-line);
 }
 
-.project-showcase__media img { width: 100%; }
+.project-showcase__media img,
+.project-showcase__media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 554;
+  background: #111820;
+}
 
 .project-showcase__media figcaption {
   padding: 0.7rem 0.3rem 0.1rem;
@@ -878,6 +885,7 @@ body.portfolio-background .portfolio-home--split {
 }
 
 .portfolio-sidebar__photo {
+  display: block;
   width: 9.5rem;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--portfolio-line);
@@ -921,14 +929,14 @@ body.portfolio-background .portfolio-home--split {
 
 .portfolio-sidebar__nav {
   display: grid;
-  gap: 0.85rem;
+  gap: 0;
   margin-top: clamp(2.5rem, 6vh, 4.5rem);
 }
 
 .portfolio-sidebar__nav a {
   display: inline-flex;
   width: fit-content;
-  min-height: 44px;
+  min-height: 38px;
   align-items: center;
   gap: 0.75rem;
   color: #30485b;
@@ -1319,6 +1327,8 @@ body.portfolio-background .page__footer {
     gap: 0.8rem 1.35rem;
     margin-top: 2.25rem;
   }
+
+  .portfolio-sidebar__nav a { min-height: 44px; }
 
   .portfolio-sidebar__links {
     gap: 0.35rem;
